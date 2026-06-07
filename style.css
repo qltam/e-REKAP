@@ -1,0 +1,175 @@
+/* Import Font Modern */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Abu-abu sangat muda */
+    color: #1e293b;
+}
+
+/* Header Style */
+h2 {
+    color: #0f172a;
+    letter-spacing: -1px;
+    margin-top: 20px;
+}
+
+/* Card & Form Style */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+.card-header {
+    border-radius: 16px 16px 0 0 !important;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1rem;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Table Style */
+.table-responsive {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f1f5f9;
+    color: #475569;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border: none;
+}
+
+.table tbody td {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Mengatur agar kolom No tidak terlalu lebar */
+.table th:first-child, 
+.table td:first-child {
+    width: 50px;
+    text-align: center;
+}
+
+/* Custom Badges */
+.badge {
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Button & Action Style */
+.btn-primary {
+    background-color: #2563eb;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-outline-info {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Animasi Hover Baris */
+.table-hover tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.table th:last-child, .table td:last-child {
+    min-width: 180px; /* Memberi ruang untuk dropdown dan tombol hapus */
+}
+
+.btn-outline-danger {
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* --- PERBAIKAN WARNA STATUS --- */
+
+/* Biru untuk Proses */
+.bg-proses {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+/* Hijau untuk Selesai */
+.bg-selesai {
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+/* Merah untuk Batal */
+.bg-batal {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* Memastikan tulisan di dalam badge tebal dan jelas */
+.badge {
+    padding: 0.5em 1em !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Mengecilkan tombol View dan dropdown Edit Status */
+.btn-sm, .form-select-sm, .table .btn, .table .form-select {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.6rem !important;
+}
+
+/* Khusus untuk kolom Aksi agar tombol tidak berhimpitan */
+.table th:last-child, .table td:last-child {
+    min-width: 150px; 
+}
