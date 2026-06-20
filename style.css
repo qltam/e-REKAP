@@ -171,5 +171,6 @@ h2 {
 
 /* Khusus untuk kolom Aksi agar tombol tidak berhimpitan */
 .table th:last-child, .table td:last-child {
-    min-width: 150px; 
+    min-width: 70px; 
+    text-align: center;
 }

@@ -1,7 +1,7 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNSsJydkr8Gxy1-Q3krq2VhbEG3EEfNEVnUwFkJ_g2zDYeOWgceqLaAmg5Yi0tQSI/exec";
 
 let dataMaster = [];
-let filteredData = []; 
+let filteredData = [];
 let currentPage = 1;
 const rowsPerPage = 25;
 
@@ -89,7 +89,7 @@ function renderTable(data, startIndex = 0) {
     if (!body) return;
 
     if (data.length === 0) {
-        body.innerHTML = `<tr><td colspan="10" class="text-center py-4 text-muted">Tidak ada data ditemukan.</td></tr>`;
+        body.innerHTML = `<tr><td colspan="9" class="text-center py-4 text-muted">Tidak ada data ditemukan.</td></tr>`;
         return;
     }
 
@@ -99,10 +99,6 @@ function renderTable(data, startIndex = 0) {
             const parts = i.tanggal.split('-');
             tanggalFormatted = parts.length === 3 ? `${parts[2]}-${parts[1]}-${parts[0]}` : i.tanggal;
         }
-
-        let statusClass = "bg-proses";
-        if (i.status === "Selesai") statusClass = "bg-selesai";
-        if (i.status === "Batal") statusClass = "bg-batal";
 
         const nomorUrut = startIndex + index + 1;
 
@@ -115,16 +111,9 @@ function renderTable(data, startIndex = 0) {
             <td class="small text-muted">${i.rup || '-'}</td>
             <td class="small">${i.kerja || '-'}</td>
             <td class="small fw-semibold">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(i.pagu || 0)}</td>
-            <td><span class="badge ${statusClass}">${i.status || 'Proses'}</span></td>
             <td><a href="${i.dpp}" target="_blank" class="btn btn-sm btn-outline-info ${i.dpp ? '' : 'disabled'}">View</a></td>
             <td>
-                <div class="d-flex gap-1 align-items-center">
-                    <select class="form-select form-select-sm" style="width: 110px;" onchange="updateStatus(${nomorUrut + 1}, this.value)">
-                        <option value="">Edit Status...</option>
-                        <option value="Proses">Proses</option>
-                        <option value="Selesai">Selesai</option>
-                        <option value="Batal">Batal</option>
-                    </select>
+                <div class="d-flex justify-content-center align-items-center">
                     <button class="btn btn-sm btn-outline-danger border-0" onclick="hapusData('${i.rup}', '${i.kerja}')" title="Hapus Data">
                         ${trashIcon}
                     </button>
@@ -138,7 +127,7 @@ function renderTable(data, startIndex = 0) {
 function updatePaginationControls() {
     const totalPages = Math.ceil(filteredData.length / rowsPerPage) || 1;
     const paginationContainer = document.getElementById('paginationContainer');
-    
+
     // Jika data tidak lebih dari 1 halaman, sembunyikan navigasi
     if (totalPages <= 1) {
         paginationContainer.classList.add('d-none');
@@ -147,7 +136,7 @@ function updatePaginationControls() {
 
     paginationContainer.classList.remove('d-none');
     document.getElementById('pageInfo').innerText = `Halaman ${currentPage} dari ${totalPages}`;
-    
+
     // Sembunyikan tombol "Sebelumnya" jika di hal 1
     const btnPrev = document.getElementById('btnPrev');
     btnPrev.style.visibility = currentPage === 1 ? "hidden" : "visible";
@@ -157,7 +146,7 @@ function updatePaginationControls() {
     btnNext.style.visibility = currentPage === totalPages ? "hidden" : "visible";
 }
 
-window.changePage = function(step) {
+window.changePage = function (step) {
     currentPage += step;
     renderPagination();
     window.scrollTo({ top: 0, behavior: 'smooth' });
