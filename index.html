@@ -20,18 +20,11 @@
                         class="form-control" required></div>
                 <div class="col-md-3"><label class="form-label small">Dinas</label><input type="text" id="inDinas"
                         class="form-control" placeholder="Nama Dinas" required></div>
-                <div class="col-md-3"><label class="form-label small">PPK</label><input type="text" id="inPPK"
+                <div class="col-md-4"><label class="form-label small">PPK</label><input type="text" id="inPPK"
                         class="form-control" placeholder="Nama PPK" required></div>
-                <div class="col-md-2"><label class="form-label small">Kode RUP</label><input type="text" id="inRUP"
+                <div class="col-md-3"><label class="form-label small">Kode RUP</label><input type="text" id="inRUP"
                         class="form-control" required></div>
-                <div class="col-md-2">
-                    <label class="form-label small">Status</label>
-                    <select id="inStatus" class="form-select" required>
-                        <option value="Proses" selected>Proses</option>
-                        <option value="Selesai">Selesai</option>
-                        <option value="Batal">Batal</option>
-                    </select>
-                </div>
+                
                 <div class="col-md-4"><label class="form-label small">Nama Pekerjaan</label><input type="text"
                         id="inKerja" class="form-control" required></div>
                 <div class="col-md-3"><label class="form-label small">Pagu (Nominal)</label><input type="number"
@@ -91,24 +84,25 @@
             <table class="table table-hover align-middle mb-0">
                 <thead class="table-dark">
                     <tr>
-                        <th>No</th>
+                        <th style="width: 60px;" class="text-center">No</th>
                         <th>Tanggal</th>
                         <th>Dinas</th>
                         <th>PPK</th>
                         <th>RUP</th>
                         <th>Pekerjaan</th>
                         <th>Pagu</th>
-                        <th>DPP</th>
-                        <th>Aksi</th>
+                        <th class="text-center" style="width: 80px;">DPP</th>
+                        <th class="text-center" style="width: 80px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
                     <tr>
-                        <td colspan="8" class="text-center">Memuat data...</td>
+                        <td colspan="9" class="text-center">Memuat data...</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
         <div id="paginationContainer" class="d-flex justify-content-between align-items-center mt-3 px-2 d-none">
             <button id="btnPrev" class="btn btn-outline-primary btn-sm fw-bold" onclick="changePage(-1)">
                 ← Sebelumnya
